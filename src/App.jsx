@@ -1,24 +1,26 @@
-import React from 'react'
-import Header from "./components/Header"
-// import { createRoot } from "react-dom/client";
-// import {createBrowserRouter,RouterProvider,Route,Link,} from "react-router-dom";
-// import Home from "./components/pages/home/Home"
-// import Tasks from "./components/pages/tasks/Tasks"
-// import Scriptspage from "./components/pages/scriptspage/Scriptspage"
-// import Timetable from "./components/pages/timetable/Timetable"
-import "./index.css"
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+
+import Header from "./components/Header";
+import Home from "./components/pages/home/Home"
+import Tasks from "./components/pages/tasks/Tasks"
+import Scriptspage from "./components/pages/scriptspage/Scriptspage"
+import Timetable from "./components/pages/timetable/Timetable"
 
 const App = () => {
     
     return (
         <div className="wrapper">
             <Header/>
+            <Routes>
+                <Route exact path="/" element={<Home/>} />
+                <Route exact path="/tasks" element={<Tasks/>} />
+                <Route exact path="/scripts" element={<Scriptspage/>} />
+                <Route exact path="/timetable" element={<Timetable/>} />
+            </Routes>
             {/* <Router>
                 <div>
-                    <Route exact path="/" component={Home} />
-                    <Route exact path="/tasks" component={Tasks} />
-                    <Route exact path="/scripts" component={Scriptspage} />
-                    <Route exact path="/timetable" component={Timetable} />
+                    
                 </div>
             </Router> */}
         </div>

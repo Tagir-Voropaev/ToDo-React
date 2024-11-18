@@ -1,6 +1,8 @@
 import React from 'react'
 import whitelogo from '../images/whitelogo.png'
-import viollogo from '../images/viollogo.png'
+import {Link } from 'react-router-dom';
+
+// import viollogo from '../images/viollogo.png'
 
 
 
@@ -8,16 +10,15 @@ function Header() {
   return (
     <div className="header">
         <div className="h-logo">
-            <a href="" className="h-logo-link">
+            <Link to="/" className="h-logo-link">
                 <img src={whitelogo} alt="" />
-            </a>
+            </Link>
         </div>
         <div className="h-navbar">
-            
-            <a href="">Главная</a>
-            <a href="">Задачи</a>
-            <a href="">Расписание</a>
-            <a href="">Скрипты</a>
+            <Link to="/">Главная</Link>
+            <Link to="/tasks">Задачи</Link>
+            <Link to="/timetable">Расписание</Link>
+            <Link to="/scripts">Скрипты</Link>
         </div>
     </div>
   )
